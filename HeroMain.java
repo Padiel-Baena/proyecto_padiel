@@ -23,7 +23,7 @@ public class HeroMain {
         Hero hero1 = new Hero(name,level,ps,psMax,xp,atq,def);
 
         Hero hero2 = new Hero();
-        hero1.drinkPotion(ps,psMax);
+        hero1.drinkPotion(ps);
         hero1.rest(ps,psMax);
         hero1.attack(hero2);
         hero1.levelUp(xp,level, psMax,ps,atq,def);

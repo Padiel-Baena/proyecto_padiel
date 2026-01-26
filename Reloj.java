@@ -6,16 +6,16 @@ public class Reloj {
     int seg;
     boolean formato24;
 
-    public static final int horaDefecto = 00;
-    public static final int minDefecto = 00;
-    public static final int segDefecto = 00;
-    public static final boolean formato24Defecto = false;
+    public static final int HORA_DEFECTO = 00;
+    public static final int MIN_DEFECTO = 00;
+    public static final int SEG_DEFECTO = 00;
+    public static final boolean FORMATO_24_DEFECTO = false;
 
     public Reloj(){
-        this.hora = horaDefecto;
-        this.min = minDefecto;
-        this.seg = segDefecto;
-        this.formato24=formato24Defecto;
+        this.hora = HORA_DEFECTO;
+        this.min = MIN_DEFECTO;
+        this.seg = SEG_DEFECTO;
+        this.formato24=FORMATO_24_DEFECTO;
     }
     public Reloj(int hora, int min, int seg, boolean formato24){
         this.hora = hora;

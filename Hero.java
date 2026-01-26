@@ -9,22 +9,24 @@ public class Hero {
     private int atq;
     private int def;
 
-    private static final String nameDefecto = "Conrad";
-    private static final int levelDefecto = 30;
-    private static final int psDefecto = 57;
-    private static final int psMaxDefecto = 75;
-    private static final int xpDefecto = 50000;
-    private static final int atqDefecto = 75;
-    private static final int defDefecto = 60;
+    private static final String NAME_DEFECTO = "Conrad";
+    private static final int LEVEL_DEFECTO = 30;
+    private static final int PS_DEFECTO = 57;
+    private static final int PS_MAX_DEFECTO = 75;
+    private static final int XP_DEFECTO = 50000;
+    private static final int ATQ_DEFECTO = 75;
+    private static final int DEF_DEFECTO = 60;
+
+    private static final int cantidadSubidaLevel = 50;
 
     public Hero(){
-        this.name = nameDefecto;
-        this.level = levelDefecto;
-        this.ps = psDefecto;
-        this.psMax = psMaxDefecto;
-        this.xp = xpDefecto;
-        this.atq = atqDefecto;
-        this.def = defDefecto;
+        this.name = NAME_DEFECTO;
+        this.level = LEVEL_DEFECTO;
+        this.ps = PS_DEFECTO;
+        this.psMax = PS_MAX_DEFECTO;
+        this.xp = XP_DEFECTO;
+        this.atq = ATQ_DEFECTO;
+        this.def = DEF_DEFECTO;
     }
     public Hero(String name, int level, int ps, int psMax, int xp, int atq, int def){
         this.name = name;
@@ -83,13 +85,13 @@ public class Hero {
         this.def = def;
     }
 
-    public int drinkPotion(int ps, int psMax){
-        if(ps == psMax){
+    public int drinkPotion(int ps){
+        if(ps == this.psMax){
             System.out.println("No has podido berberte la pocion, tienes la vida al maximo");
         }else{
             ps += 10;
-            if (ps > psMax){
-                ps = psMax;
+            if (ps > this.psMax){
+                ps = this.psMax;
             }
             System.out.println("Te has tomado la pocion de forma exitosa");
         }
@@ -112,15 +114,15 @@ public class Hero {
     }
     public void attack(Hero hero1){
         System.out.println(hero1.name + " tiene : " + hero1.getPs() + "/" + hero1.getPsMax() + " PS");
-        int damage =Math.max(1,(this.atq-hero1.getDef())+10);
+        int damage =Math.max(1,(this.atq-hero1.def)+10);
         hero1.setPs(hero1.getPs()-damage);
         System.out.println(this.name + " ha golpeado a " + hero1.name);
         this.xp += 10;
         System.out.println(this.name + " ha ganado 10 de experiencia");
     }
     public void levelUp(int xp, int level, int psMax, int ps, int atq, int def){
-        if (xp >= 50){
-            xp -=50;
+        if (xp >= cantidadSubidaLevel){
+            xp -=cantidadSubidaLevel;
             level += 1;
             ps +=5;
             psMax +=5;

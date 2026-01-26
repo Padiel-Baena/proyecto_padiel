@@ -49,7 +49,7 @@ public class HeroMainHorda2 {
 
             if (numr.nextInt(10) == 0) {
                 System.out.println("¡Has encontrado una poción!");
-                hero1.setPs(hero1.drinkPotion(hero1.getPs(), hero1.getPsMax()));
+                hero1.setPs(hero1.drinkPotion(hero1.getPs()));
             }
         }
         System.out.println("\n##############################################################");
@@ -58,33 +58,33 @@ public class HeroMainHorda2 {
 
     }
 
-   /* public static Hero[] generadorEnemigos(Random numr) {
-        int cGoblins = numr.nextInt(3) + 1;
-        Hero[] horda = new Hero[cGoblins];
-        String nameGoblin = "Goblin";
-        switch (cGoblins) {
-            case 1:
-                Hero goblin = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
-                horda[0] = goblin;
-                break;
-            case 2:
-                Hero goblin1 = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
-                Hero goblin2 = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
-                horda[0] = goblin1;
-                horda[1] = goblin2;
-                break;
-            case 3:
-                Hero goblin3 = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
-                Hero goblin4 = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
-                Hero goblin5 = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
-                horda[0] = goblin3;
-                horda[1] = goblin4;
-                horda[2] = goblin5;
-                break;
-        }
-        return horda;
-    }
-*/
+    /* public static Hero[] generadorEnemigos(Random numr) {
+         int cGoblins = numr.nextInt(3) + 1;
+         Hero[] horda = new Hero[cGoblins];
+         String nameGoblin = "Goblin";
+         switch (cGoblins) {
+             case 1:
+                 Hero goblin = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
+                 horda[0] = goblin;
+                 break;
+             case 2:
+                 Hero goblin1 = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
+                 Hero goblin2 = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
+                 horda[0] = goblin1;
+                 horda[1] = goblin2;
+                 break;
+             case 3:
+                 Hero goblin3 = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
+                 Hero goblin4 = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
+                 Hero goblin5 = new Hero(nameGoblin, 5, 15, 15, 250, 20, 15);
+                 horda[0] = goblin3;
+                 horda[1] = goblin4;
+                 horda[2] = goblin5;
+                 break;
+         }
+         return horda;
+     }
+ */
     public static void huida(Random rn, Hero[] horda) {
         for(Hero enemigo : horda){
             if(enemigo.getPs()>0){

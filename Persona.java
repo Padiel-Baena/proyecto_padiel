@@ -6,18 +6,18 @@ public class Persona {
     private String apellidos;
     private int edad;
 
-    public static final String dniDefecto = "00000000A";
-    public static final String nombreDefecto = "Eustaquio";
-    public static final String apellidosDefecto = "Calatraba Martinez";
-    public static final int edadDefecto = 15;
+    public static final String DNI_DEFECTO = "00000000A";
+    public static final String NOMBRE_DEFECTO = "Eustaquio";
+    public static final String APELLIDOS_DEFECTO = "Calatraba Martinez";
+    public static final int EDAD_DEFECTO = 15;
     public static final int adultAge = 18;
     public static final int retiredAge = 65;
 
     public Persona() {
-        this.dni = dniDefecto;
-        this.nombre = nombreDefecto;
-        this.apellidos = apellidosDefecto;
-        this.edad = edadDefecto;
+        this.dni = DNI_DEFECTO;
+        this.nombre = NOMBRE_DEFECTO;
+        this.apellidos = APELLIDOS_DEFECTO;
+        this.edad = EDAD_DEFECTO;
     }
 
     public Persona(String dni, String nombre, String apellidos, int edad) {
@@ -63,19 +63,23 @@ public class Persona {
          return "Mi nombre es " + nombre + apellidos + "\nMi DNI es : " + dni + "\nY tengo " + edad;
     }
 
-    public void isAdult(int edad) {
+    public boolean isAdult(int edad) {
         if (edad >= adultAge) {
             System.out.println("Soy mayor de edad");
+            return true;
         } else {
             System.out.println("No soy mayor de edad");
+            return false;
         }
     }
 
-    public void isRetired(int edad) {
+    public boolean isRetired(int edad) {
         if (edad >= retiredAge) {
             System.out.println("Estoy retirado");
+            return true;
         } else {
             System.out.println("No estoy retirado");
+            return false;
         }
     }
 
