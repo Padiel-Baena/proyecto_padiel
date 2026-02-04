@@ -49,6 +49,4 @@ public Usuario(String nombre, int edad, String dni){
     public String toString(String nombre, int edad, String dni){
         return "Nombre : " + nombre + "\nEdad : " + edad + "\nDNI : " + dni;
     }
-
-
 }

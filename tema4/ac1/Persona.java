@@ -1,4 +1,4 @@
-package tema4;
+package tema4.ac1;
 
 public class Persona {
     private String dni;

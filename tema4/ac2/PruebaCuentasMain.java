@@ -1,6 +1,7 @@
 package tema4.ac2;
 
 import tema4.ac2.Persona2;
+import tema4.ac2.Cuenta;
 
 import java.util.Scanner;
 
@@ -181,7 +182,7 @@ public class PruebaCuentasMain {
         }
 
         //TODO: ¿quitar "cuentaAsociadaPersona"?
-        while (opcion != 1 && !personaCreada && !cuentaAsociadaPersona) {
+        while (opcion != 1 && !personaCreada ) {
             System.out.println("Para hacer cualquier funcion primero necesita crear una persona");
             opcion = sc.nextInt();
         }

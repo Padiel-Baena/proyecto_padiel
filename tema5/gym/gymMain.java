@@ -22,27 +22,28 @@ public class gymMain {
         String dni_prueba = "55555555z";
         int edad_prueba = 35;
         String nombre_prueba = "pedro";
+        sc.nextLine();
 
-        app.darAlta(nombre,usuario1, usuarios);
+        darAlta(nombre,usuario1, usuarios);
         System.out.println("Dime un nombre para cambiar al usuario 2");
         String nombre2 = sc.nextLine();
-        app.modificarUsuarios(dni, usuario2,nombre2);
-        app.darAlta(dni, usuario2);
+        modificarUsuarios(dni, usuario2,nombre2);
+        darAlta(dni, usuario2, usuarios);
         Usuario usuario3 = new Usuario(nombre_prueba,edad_prueba,dni_prueba);
-        app.darAlta(usuario3.getDni(), usuario3);
+        darAlta(usuario3.getDni(), usuario3, usuarios);
 
-        app.darBaja(usuario3.getDni(), usuario3);
+        darBaja(usuario3.getDni(), usuario3, usuarios);
     }
     public static void darAlta(String dni, Usuario usuario,  Map<String,Usuario> usuarios){
         usuarios.put(dni, usuario);
     }
-    public void darBaja(String dni, Usuario usuario){
+    public static void darBaja(String dni, Usuario usuario, Map<String,Usuario> usuarios){
         usuarios.remove(dni);
     }
-    public void modificarUsuarios(String dni, Usuario usuario, String nombre2){
+    public static void modificarUsuarios(String dni, Usuario usuario, String nombre2){
         usuario.setNombre(nombre2);
     }
-    public void modificarUsuarios(String dni, Usuario usuario, int edad2){
+    public static void modificarUsuarios(String dni, Usuario usuario, int edad2){
         usuario.setEdad(edad2);
     }
 }
