@@ -1,4 +1,6 @@
-package tema4;
+package tema4.ac2;
+
+import tema4.ac2.Cuenta;
 
 import java.util.Scanner;
 

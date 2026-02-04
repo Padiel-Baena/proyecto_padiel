@@ -1,4 +1,6 @@
-package tema4;
+package tema4.ac2;
+
+import tema4.ac2.Persona2;
 
 import java.util.Scanner;
 
@@ -72,7 +74,8 @@ public class PruebaCuentasMain {
                     for (int i = 0; i < personas.length; i++) {
                         String dni2 = personas[i].getDni();
                         if (dniBusqueda.equals(dni2)) {
-                            personas[i].showInfo(dni, sc);
+                            personas[i].toString(dni);
+                            System.out.println(personas[i]);
                         }
                     }
                     break;
@@ -87,16 +90,13 @@ public class PruebaCuentasMain {
                         String dni2 = personas[i].getDni();
                         if (dniBusqueda.equals(dni2)) {
                             for (int j = 0; j < personas[i].cCuentasCreadas; j++) {
-                                Cuenta[] cuenta2 = new Cuenta[3];
-                                cuenta2 = personas[i].getCuentas();
-                                if(cuenta2[j].getnCuenta()==cuentaBusqueda){
-                                    cuenta2[j].recibirAbonos(nCuenta, saldo, saldoRecibido);
+                                if(personas[i].getCuentas()[j].getnCuenta()==cuentaBusqueda) {
+                                    personas[i].getCuentas()[j].recibirAbonos(saldoRecibido);
                                     System.out.println("La nomina ha sido ingresada de forma correcta");
                                 }
                             }
                         }
                     }
-
                     break;
                 case 5:
                     System.out.println("Has elegido la opcion de hacer un pago, dime el dni de la persona que va a recibir dicho pago");
@@ -109,10 +109,9 @@ public class PruebaCuentasMain {
                         String dni2 = personas[i].getDni();
                         if (dniBusqueda.equals(dni2)) {
                             for (int j = 0; j < personas[i].cCuentasCreadas; j++) {
-                                Cuenta[] cuenta2 = new Cuenta[3];
-                                cuenta2 = personas[i].getCuentas();
-                                if(cuenta2[j].getnCuenta()==cuentaBusqueda){
-                                    cuenta2[j].pagarRecibos(nCuenta, saldo, saldoRecibido);
+                                if(personas[i].getCuentas()[j].getnCuenta()==cuentaBusqueda) {
+                                    personas[i].getCuentas()[j].pagarRecibos(saldoRecibido);
+                                    System.out.println("Has hecho un pago correctamente");
                                 }
                             }
                         }
@@ -129,14 +128,12 @@ public class PruebaCuentasMain {
                     dniBusqueda2=sc.nextLine();
                     System.out.println("Dime el numero de cuenta para realizar el tramite");
                     cuentaBusqueda2 = sc.nextInt();
-                    for (int k = 0; k < personas.length; k++) {
-                        String dni3 = personas[k].getDni();
-                        if (dniBusqueda.equals(dni3)) {
-                            for (int j = 0; j < personas[k].cCuentasCreadas; j++) {
-                                Cuenta[] cuenta3 = new Cuenta[3];
-                                cuenta3 = personas[k].getCuentas();
-                                if (cuenta3[j].getnCuenta() == cuentaBusqueda) {
-                                    cuenta3[j].pagarRecibos(nCuenta, saldo, saldoRecibido);
+                    for (int i = 0; i < personas.length; i++) {
+                        String dni2 = personas[i].getDni();
+                        if (dniBusqueda.equals(dni2)) {
+                            for (int j = 0; j < personas[i].cCuentasCreadas; j++) {
+                                if(personas[i].getCuentas()[j].getnCuenta()==cuentaBusqueda) {
+                                    personas[i].getCuentas()[j].recibirAbonos(saldoRecibido);
                                 }
                             }
                         }
@@ -145,14 +142,13 @@ public class PruebaCuentasMain {
                         String dni2 = personas[i].getDni();
                         if (dniBusqueda.equals(dni2)) {
                             for (int j = 0; j < personas[i].cCuentasCreadas; j++) {
-                                Cuenta[] cuenta2 = new Cuenta[3];
-                                cuenta2 = personas[i].getCuentas();
-                                if(cuenta2[j].getnCuenta()==cuentaBusqueda){
-                                    cuenta2[j].recibirAbonos(nCuenta, saldo, saldoRecibido);
+                                if(personas[i].getCuentas()[j].getnCuenta()==cuentaBusqueda) {
+                                    personas[i].getCuentas()[j].pagarRecibos(saldoRecibido);
                                 }
                             }
                         }
                     }
+                    System.out.println("La transferencia ha sido efectuada");
                     break;
                 case 7:
                     for (int i = 0; i < personas.length; i++) {
@@ -183,6 +179,8 @@ public class PruebaCuentasMain {
             System.out.println("El numero que has elegido no es correcto");
             opcion = sc.nextInt();
         }
+
+        //TODO: ¿quitar "cuentaAsociadaPersona"?
         while (opcion != 1 && !personaCreada && !cuentaAsociadaPersona) {
             System.out.println("Para hacer cualquier funcion primero necesita crear una persona");
             opcion = sc.nextInt();

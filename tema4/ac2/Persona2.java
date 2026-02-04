@@ -1,4 +1,6 @@
-package tema4;
+package tema4.ac2;
+
+import tema4.ac2.Cuenta;
 
 import java.util.Scanner;
 
@@ -145,12 +147,11 @@ public class Persona2 {
         }
         return correcto;
     }
-    public void showInfo(String dni, Scanner sc){
-        String dniBusqueda =  sc.nextLine();
-        if(dniBusqueda.equals(this.dni)){
-            for (int i = 0; i < (this.getCuentas()).length; i++) {
-                System.out.println(cuentas[i]);
-            }
-        }
+
+    //toString
+    public String toString(String dni) {
+        String text1= "Dni : " + dni + "\n";
+        String text2 = "Cuentas : " + cuentas[0].toString() + "\n";
+        return text1 + text2;
     }
 }
