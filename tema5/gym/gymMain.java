@@ -27,9 +27,13 @@ public class gymMain {
         darAlta(nombre,usuario1, usuarios);
         System.out.println("Dime un nombre para cambiar al usuario 2");
         String nombre2 = sc.nextLine();
+
         modificarUsuarios(dni, usuario2,nombre2);
+
         darAlta(dni, usuario2, usuarios);
+
         Usuario usuario3 = new Usuario(nombre_prueba,edad_prueba,dni_prueba);
+
         darAlta(usuario3.getDni(), usuario3, usuarios);
 
         darBaja(usuario3.getDni(), usuario3, usuarios);
@@ -38,6 +42,7 @@ public class gymMain {
         usuarios.put(dni, usuario);
     }
     public static void darBaja(String dni, Usuario usuario, Map<String,Usuario> usuarios){
+
         usuarios.remove(dni);
     }
     public static void modificarUsuarios(String dni, Usuario usuario, String nombre2){

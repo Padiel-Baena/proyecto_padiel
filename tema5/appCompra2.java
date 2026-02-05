@@ -15,14 +15,27 @@ public class appCompra2 {
             objeto = sc.nextLine();
             listaCompra.add(objeto);
         }
-        if(!listaCompra.add(objeto)){
-            System.out.println("El producto que quieres añadir, ya ha sido añadido previamente");
+        toStringLista(listaCompra);
+        toStringCarro(carroCompra);
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Introduce el objeto que quieres añadir al carro de la compra");
+            objeto = sc.nextLine();
+            addCarro(carroCompra, objeto);
         }
+
+        productosFaltantes(carroCompra, listaCompra);
     }
-    public static String toString( Set<String> listaCompra, Set<String> carroCompra){
-        return "En la lista de la compra tienes : " + listaCompra + "\nEn el carro de la compra tienes : " + carroCompra;
+    public static String toStringLista( Set<String> listaCompra){
+        return "En la lista de la compra tienes : " + listaCompra;
+    }
+    public static String toStringCarro(Set<String> carroCompra){
+        return "En el carro de la compra tienes : " + carroCompra;
     }
     public static void addCarro(Set<String> carroCompra, String objeto){
         carroCompra.add(objeto);
+        System.out.println("Has añadido un objeto al carro de la compra");
+    }
+    public static String productosFaltantes(Set<String> carroCompra, Set<String> listaCompra){
+        return "Te faltan los siguientes objetos : " + listaCompra.removeAll(carroCompra);
     }
 }

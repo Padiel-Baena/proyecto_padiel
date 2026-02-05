@@ -30,12 +30,18 @@ public class BancoMain {
         usuarioBanco persona2 = new usuarioBanco();
         System.out.println("Ha llegado un nuevo cliente al banco");
         añadirCola(persona2, clientes);
+
         usuarioBanco persona3 = new usuarioBanco(dniPrueba, nombrePrueba, edadPrueba);
         System.out.println("Ha llegado un nuevo cliente al banco");
         añadirCola(persona3, clientes);
+
         quitarUsuario(persona3, clientes);
+
         cambiarPrimero(persona1, clientes);
 
+        for(usuarioBanco cliente: clientes){
+            System.out.println(cliente);
+        }
 
     }
     public static void añadirCola(usuarioBanco  persona, List<usuarioBanco> clientes) {
