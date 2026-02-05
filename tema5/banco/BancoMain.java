@@ -1,59 +1,143 @@
 package tema5.banco;
 
+import tema5.gym.Usuario;
+
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class BancoMain {
 
     public static void main(String[] args) {
-        List<usuarioBanco> clientes = new LinkedList<>();
+        List<UsuarioBanco> clientes = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
-        System.out.println("======ABRE EL BANCO======");
-        System.out.println("====En la recepcion te piden el DNI====");
-        String dni = sc.nextLine();
-        String nombre ;
-        int edad ;
-        String nombrePrueba = "alfredo";
-        String dniPrueba = "55555555l";
-        int edadPrueba = 75;
 
-        System.out.println("TE DAN UN FORMULARIO PARA RELLENAR");
-        System.out.print("NOMBRE : ");
-        nombre = sc.nextLine();
-        System.out.print("EDAD : ");
-        edad = sc.nextInt();
+        int dni;
+        int edad;
+        int opcion = 0;
+        int edad2;
 
-        usuarioBanco persona1 = new usuarioBanco(dni, nombre, edad);
-        añadirCola(persona1, clientes);
+        String nombre;
+        String nombreCambio;
+        String dniComprobado;
+        String nombre2;
 
-        usuarioBanco persona2 = new usuarioBanco();
-        System.out.println("Ha llegado un nuevo cliente al banco");
-        añadirCola(persona2, clientes);
 
-        usuarioBanco persona3 = new usuarioBanco(dniPrueba, nombrePrueba, edadPrueba);
-        System.out.println("Ha llegado un nuevo cliente al banco");
-        añadirCola(persona3, clientes);
+        System.out.println("############################################################");
+        System.out.println("====================BIENVENIDO/A AL BANCO===================");
+        System.out.println("############################################################");
 
-        quitarUsuario(persona3, clientes);
+        while (opcion != 5){
+            showMenu();
+            opcion = sc.nextInt();
+            switch (opcion){
+                case 1:
+                    System.out.println("\n=======================================");
+                    System.out.println("HAS LLEGADO AL BANCO");
 
-        cambiarPrimero(persona1, clientes);
+                    System.out.println("=================================");
+                    System.out.println("Dime el Dni(UNICAMENTE EL NUMERO)");
+                    dni = sc.nextInt();
+                    dniComprobado = UsuarioBanco.checkDni(dni);
+                    System.out.println("===========================\nDNI : " + dniComprobado);
 
-        for(usuarioBanco cliente: clientes){
-            System.out.println(cliente);
+                    System.out.println("===========================\nAhora dime tu nombre");
+                    sc.nextLine();
+                    nombre = sc.nextLine();
+                    nombre2 = nombre.toUpperCase();
+                    System.out.println("============================\nPerfecto " + nombre2 + " Ahora tu edad");
+                    edad = sc.nextInt();
+                    UsuarioBanco persona1 = new UsuarioBanco(dniComprobado,nombre2, edad);
+
+                    añadirCola(persona1, clientes);
+                    break;
+                case 2:
+                    cambiarPrimero(clientes);
+                    break;
+                case 3:
+                    System.out.println("\n================================");
+                    System.out.println("HAS ELEGIDO LA OPCION DE IRTE DE LA COLA");
+                    System.out.println("=================================");
+                    System.out.println("Dime el DNI de la persona que se ha cansado de esperar(UNICAMENTE EL NUMERO)");
+                    dni = sc.nextInt();
+                    dniComprobado = UsuarioBanco.checkDni(dni);
+
+                    quitarUsuario(clientes, dniComprobado);
+                    break;
+                case 4:
+                    System.out.println("\n================================");
+                    System.out.println("HAS ELEGIDO LA OPCION DE VER LISTA");
+                    if(!clientes.isEmpty()){
+                        System.out.println(toStringBanco(clientes));
+                    }
+                    else{
+                        System.out.println("No hay nadie en la cola.Para poder ver la cola, primero tendra que llegar gente\n:)");
+                    }
+                    break;
+                case 5:
+                    System.out.println("##################################################");
+                    System.out.println("===============SALIENDO DEL SISTEMA===============");
+                    System.out.println("###################################################");
+                    break;
+            }
         }
 
     }
-    public static void añadirCola(usuarioBanco  persona, List<usuarioBanco> clientes) {
+    public static void añadirCola(UsuarioBanco persona, List<UsuarioBanco> clientes) {
         clientes.add(persona);
         System.out.println("El formulario ha sido procesado y recibiras un aviso cuando te toque");
     }
-    public static void cambiarPrimero(usuarioBanco  persona, List<usuarioBanco> clientes) {
-        clientes.remove(persona);
-        System.out.println(persona.getNombre() + " ha terminado sus tramites, que pase el siguiente");
+    public static void cambiarPrimero(List<UsuarioBanco> clientes) {
+       if(!clientes.isEmpty()){
+           UsuarioBanco persona = clientes.get(0);
+           System.out.println(persona.getNombre() + " HA TERMINADO SUS GESTIONES");
+           clientes.remove(0);
+           if(!clientes.isEmpty()) {
+               persona = clientes.get(0);
+               System.out.println("AHORA ES TURNO DE " + persona.getNombre());
+           }else{
+               System.out.println("No hay mas personas haciendo cola");
+           }
+       }
+       else {
+           System.out.println("NO HAY PERSONAS EN EL BANCO");
+       }
     }
-    public static void quitarUsuario(usuarioBanco  persona, List<usuarioBanco> clientes) {
-        clientes.remove(persona);
-        System.out.println(persona.getNombre() + " se ha cansado de esperar y ha decidido irse");
+    public static void quitarUsuario(List<UsuarioBanco> clientes, String dniBusqueda) {
+        if(!clientes.isEmpty()){
+            UsuarioBanco encontrado = null;
+            for (UsuarioBanco u : clientes) {
+                if (u.getDni().equals(dniBusqueda)) {
+                    encontrado = u;
+                    break;
+                }
+            }
+            if (encontrado != null) {
+                clientes.remove(encontrado);
+                System.out.println(encontrado.getNombre() + " HA DECIDIDO IRSE DE LA COLA");
+            }
+            else{
+                System.out.println("NO HAY NADIE EN LA COLA QUE TENGA ESE DNI");
+            }
+        }
+        else {
+            System.out.println("NO HAY PERSONAS EN EL BANCO");
+        }
     }
+    public static void showMenu(){
+        System.out.print("==================================\n1-Añadir alguien a la cola\n2-Quitar primera persona\n3-Quitar cualquier persona\n4-Mostrar cola\n5-Salir\nDime que es lo que quieres hacer : ");
+
+    }
+    public static String toStringBanco(List<UsuarioBanco> clientes){
+        String cola = "#########################################\n" + "=============Lista de Usuarios=============\n" + "#########################################\n";
+        for (UsuarioBanco u : clientes) {
+            cola += "\n" + u.toString() + "\n=========================================";
+        }
+        return cola;
+    }
+
+
+
+
 }
