@@ -56,6 +56,7 @@ public class GymMain {
                     dni = sc.nextInt();
                     dniComprobado = Usuario.checkDni(dni);
                     darBaja(dniComprobado, usuarios);
+                    //informar, si no existe el dni
                     break;
                 case 3:
                     System.out.println("\n================================");
@@ -105,6 +106,9 @@ public class GymMain {
         usuarios.put(dni, usuario);
     }
     public static void darBaja(String dni, Map<String,Usuario> usuarios){
+        if(dni == null){
+            System.out.println("No existe el dni");
+        }
         usuarios.remove(dni);
     }
     public static void modificarUsuariosNombre(String dniComprobado, String nombreCambio, Map<String,Usuario> usuarios){

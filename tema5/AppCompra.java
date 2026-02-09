@@ -13,7 +13,7 @@ public class AppCompra {
 
         while(!finalizar) {
             System.out.println("############################################################");
-            System.out.println("DIME EL PRODUCTO QUE QUIERES AÑADIR A LA LISTA DE LA COMPRA");
+            System.out.println("DIME EL PRODUCTO QUE QUIERES AÑADIR A LA LISTA DE LA COMPRA\nPARA SALIR ESCRIBE SALIR O FIN");
             System.out.println("############################################################");
             objeto = sc.nextLine().toUpperCase();
             finalizar = comprobarObjeto(objeto);
@@ -34,9 +34,9 @@ public class AppCompra {
                 System.out.println("###################################################");
             }
         }
-        System.out.println(toString(listaCompra));
+        System.out.println(showLista(listaCompra));
     }
-    public static String toString(Set<String> listaCompra){
+    public static String showLista(Set<String> listaCompra){
         return "La lista de la compra es : " + listaCompra + "\nTienes " +  listaCompra.size() + " productos";
     }
     public static boolean comprobarObjeto(String objeto){

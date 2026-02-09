@@ -15,7 +15,7 @@ public class E3 {
         System.out.println("==================BIENVENIDO/A A UN ARRAY DE DOUBLES(DECIMALES)==================");
         System.out.println("#################################################################################");
 
-        for (int i = 0; i < vector.length ; i++) {
+        for (int i = 0; i < vector.length+1 ; i++) {
             correcto = false;
             while (!correcto) {
                 try {
@@ -33,6 +33,13 @@ public class E3 {
                     System.out.println("Valor introducido incorrecto");
                     System.out.println("============================");
                     System.out.println("ERROR : " + ex.getMessage());
+                    System.out.println("============================");
+                    sc.nextLine();
+                }catch (ArrayIndexOutOfBoundsException ex){
+                    System.out.println("============================");
+                    System.out.println("Valor introducido incorrecto");
+                    System.out.println("============================");
+                    System.err.println("ERROR : " + ex.getMessage());
                     System.out.println("============================");
                     sc.nextLine();
                 }

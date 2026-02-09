@@ -31,11 +31,11 @@ public class E1 {
                         System.out.println("==========================");
                     }catch (InputMismatchException ex){
                         num = 0;
-                        System.out.println("============================");
-                        System.out.println("Valor introducido incorrecto");
-                        System.out.println("============================");
-                        System.out.println("ERROR : " + ex.getMessage());
-                        System.out.println("============================");
+                        System.err.println("============================");
+                        System.err.println("Valor introducido incorrecto");
+                        System.err.println("============================");
+                        System.err.println("ERROR : " + ex.getMessage());
+                        System.err.println("============================");
                         sc.nextLine();
                     }
                     break;

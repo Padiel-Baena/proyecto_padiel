@@ -23,7 +23,6 @@ public class BancoMain {
         String dniComprobado;
         String nombre2;
 
-
         System.out.println("############################################################");
         System.out.println("====================BIENVENIDO/A AL BANCO===================");
         System.out.println("############################################################");
@@ -50,7 +49,7 @@ public class BancoMain {
                     edad = sc.nextInt();
                     UsuarioBanco persona1 = new UsuarioBanco(dniComprobado,nombre2, edad);
 
-                    añadirCola(persona1, clientes);
+                    anyadirCola(persona1, clientes);
                     break;
                 case 2:
                     cambiarPrimero(clientes);
@@ -84,7 +83,7 @@ public class BancoMain {
         }
 
     }
-    public static void añadirCola(UsuarioBanco persona, List<UsuarioBanco> clientes) {
+    public static void anyadirCola(UsuarioBanco persona, List<UsuarioBanco> clientes) {
         clientes.add(persona);
         System.out.println("El formulario ha sido procesado y recibiras un aviso cuando te toque");
     }
@@ -136,8 +135,4 @@ public class BancoMain {
         }
         return cola;
     }
-
-
-
-
 }

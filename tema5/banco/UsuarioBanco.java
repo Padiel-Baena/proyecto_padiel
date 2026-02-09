@@ -1,7 +1,7 @@
 package tema5.banco;
 
 public class UsuarioBanco {
-    String dni;
+    private String dni;
     String nombre;
     int edad;
 
