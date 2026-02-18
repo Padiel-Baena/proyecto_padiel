@@ -7,10 +7,14 @@ public class Turismos extends Vehiculo {
     private final int  C_PLAZAS_DEFECTO = 5;
     private final boolean ES_PROFESIONAL_DEFECTO = false;
 
-    //TODO PREGUNTAR A ANA SI VA UN CONSTRUCTOR VACIO
-
-    public Turismos(int cPlazas, boolean esProfesional) {
+    public Turismos(){
         super();
+        this.cPlazas = C_PLAZAS_DEFECTO;
+        this.esProfesional = ES_PROFESIONAL_DEFECTO;
+    }
+
+    public Turismos(int cPlazas, boolean esProfesional, String marca, String modelo, String color, String matricula,  int anio) {
+        super(marca, modelo, color, matricula, anio);
         this.cPlazas = cPlazas;
         this.esProfesional = esProfesional;
     }

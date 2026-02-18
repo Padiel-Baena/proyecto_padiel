@@ -69,4 +69,9 @@ public class Animal {
     public void HacerRuido(){
         System.out.println(getNombre() + " esta haciendo ruido");
     }
+
+    public String toString(){
+        String frase = "Nombre: " + getNombre() + "\nEdad: " + getEdad() + "\nEspecie: " +  getEspecie() +  "\nPeso: " + getPeso() + "\nTipo: " + getTipo();
+        return frase;
+    }
 }

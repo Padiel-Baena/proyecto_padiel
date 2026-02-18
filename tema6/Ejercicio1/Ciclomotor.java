@@ -3,13 +3,15 @@ package tema6.Ejercicio1;
 public class Ciclomotor extends Vehiculo{
     protected int cilindrada;
 
-    private final int  PESO_MAX_DEFECTO = 3000;
-    private final boolean MERCANCIA_PELIGROSA_DEFECTO = false;
+    private final int CILINDRADA_DEFECTO = 450;
 
-    //TODO PREGUNTAR A ANA SI VA UN CONSTRUCTOR VACIO
-
-    public Ciclomotor(int cilindrada) {
+    public Ciclomotor() {
         super();
+        this.cilindrada = CILINDRADA_DEFECTO;
+    }
+
+    public Ciclomotor(int cilindrada, String marca, String modelo, String color, String matricula,  int anio) {
+        super(marca, modelo, color, matricula, anio);
         this.cilindrada = cilindrada;
 
     }

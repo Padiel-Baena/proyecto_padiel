@@ -7,10 +7,14 @@ public class Camiones extends Vehiculo{
     private final int  PESO_MAX_DEFECTO = 3000;
     private final boolean MERCANCIA_PELIGROSA_DEFECTO = false;
 
-    //TODO PREGUNTAR A ANA SI VA UN CONSTRUCTOR VACIO
-
-    public Camiones(int cPlazas, boolean esProfesional) {
+    public Camiones(){
         super();
+        this.pesoMax = PESO_MAX_DEFECTO;
+        this.mercanciaPeligrosa = MERCANCIA_PELIGROSA_DEFECTO;
+    }
+
+    public Camiones(int cPlazas, boolean esProfesional, String marca, String modelo, String color, String matricula,  int anio) {
+        super(marca, modelo, color, matricula, anio);
         this.pesoMax = cPlazas;
         this.mercanciaPeligrosa = esProfesional;
     }
