@@ -1,4 +1,4 @@
-package tema6.Ejercicio8;
+package tema6.POO3.Ejercicio8;
 
 public class AtaqueEspadazo implements IAtaqueAvanzado{
 

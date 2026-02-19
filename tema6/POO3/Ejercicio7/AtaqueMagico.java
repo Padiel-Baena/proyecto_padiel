@@ -1,4 +1,4 @@
-package tema6.Ejercicio7;
+package tema6.POO3.Ejercicio7;
 
 public class AtaqueMagico implements IAtaque{
 

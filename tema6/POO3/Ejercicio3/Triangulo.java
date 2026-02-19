@@ -1,4 +1,4 @@
-package tema6.Ejercicio3;
+package tema6.POO3.Ejercicio3;
 
 public class Triangulo extends Figura2D{
     public Triangulo(){

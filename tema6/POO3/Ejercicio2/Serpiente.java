@@ -1,4 +1,4 @@
-package tema6.Ejercicio2;
+package tema6.POO3.Ejercicio2;
 
 enum TipoEscamas {Lisa, Rugosa, Diamantes};
 public class Serpiente extends Animal {

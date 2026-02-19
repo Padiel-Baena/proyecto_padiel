@@ -1,4 +1,4 @@
-package tema6.Ejercicio5;
+package tema6.POO3.Ejercicio5;
 
 public class PublicacionFoto implements IPublicacion,IAbrirPublicacion, IPublicaionReaccion{
 

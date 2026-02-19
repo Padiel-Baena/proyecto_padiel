@@ -1,4 +1,4 @@
-package tema6.Ejercicio2;
+package tema6.POO3.Ejercicio2;
 
 enum TipoAnimal {MAMIFERO, AVE, REPTIL, ANFIBIO, PEZ, INVERTEBRADO}
 public class Animal {

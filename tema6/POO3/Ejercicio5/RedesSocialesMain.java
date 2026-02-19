@@ -1,8 +1,8 @@
-package tema6.Ejercicio5;
+package tema6.POO3.Ejercicio5;
 
 public class RedesSocialesMain {
     public static void main(String[] args) {
-        PublicacionFoto foto = new PublicacionFoto(50, TipoPublicacion.Foto);
+        tema6.POO3.Ejercicio5.PublicacionFoto foto = new tema6.POO3.Ejercicio5.PublicacionFoto(50, TipoPublicacion.Foto);
 
         foto.abrir();
         foto.comentar();

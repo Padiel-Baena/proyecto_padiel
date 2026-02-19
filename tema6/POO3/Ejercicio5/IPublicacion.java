@@ -1,4 +1,4 @@
-package tema6.Ejercicio5;
+package tema6.POO3.Ejercicio5;
 //Para una red social, crea una interfaz Publicacion con métodos como
 //publicar y compartir. Implementa esta interfaz en clases como
 //PublicacionTexto, PublicacionFoto, y PublicacionVideo. Cada clase debe tener

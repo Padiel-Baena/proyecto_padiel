@@ -1,4 +1,4 @@
-package tema6.Ejercicio1;
+package tema6.POO3.Ejercicio1;
 
 public class Ciclomotor extends Vehiculo{
     protected int cilindrada;

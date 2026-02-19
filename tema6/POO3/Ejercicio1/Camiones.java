@@ -1,4 +1,4 @@
-package tema6.Ejercicio1;
+package tema6.POO3.Ejercicio1;
 
 public class Camiones extends Vehiculo{
     protected int pesoMax;

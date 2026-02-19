@@ -1,7 +1,7 @@
-package tema6.Ejercicio4;
+package tema6.POO3.Ejercicio4;
 
 enum Tipo{Animacion, Accion, Documental, Ciencia_Ficcion}
-public class Dvd extends Ficha{
+public class Dvd extends tema6.POO3.Ejercicio4.Ficha {
     protected String director;
     protected int anio;
     protected Tipo tipo;

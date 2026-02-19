@@ -1,4 +1,4 @@
-package tema6.Ejercicio2;
+package tema6.POO3.Ejercicio2;
 
 public class AnimalesMain {
     public static void main(String[] args) {

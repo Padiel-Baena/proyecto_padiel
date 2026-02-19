@@ -1,4 +1,4 @@
-package tema6.Ejercicio1;
+package tema6.POO3.Ejercicio1;
 //Crea una clase vehículo con los atributos comunes a turismos, camiones y
 //ciclomotores. Para los turismos queremos saber el número de plazas y el tipo
 //de uso (profesional o particular). Para los camiones el peso máximo

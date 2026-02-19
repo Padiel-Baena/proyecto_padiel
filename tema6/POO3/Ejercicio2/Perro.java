@@ -1,4 +1,4 @@
-package tema6.Ejercicio2;
+package tema6.POO3.Ejercicio2;
 
 enum TamañoAnimal {Pequeño, Mediano, Grande}
 public class Perro extends Animal {

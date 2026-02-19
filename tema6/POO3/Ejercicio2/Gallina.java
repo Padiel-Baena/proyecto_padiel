@@ -1,4 +1,4 @@
-package tema6.Ejercicio2;
+package tema6.POO3.Ejercicio2;
 
 public class Gallina extends Animal{
     protected boolean esPonedora;

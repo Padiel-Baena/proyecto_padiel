@@ -1,4 +1,4 @@
-package tema6.Ejercicio4;
+package tema6.POO3.Ejercicio4;
 //Crea una clase Ficha diseñada para manipular elementos de una biblioteca:
 //libros, revistas, DVD… Los atributos comunes serán número y título.
 //Los libros: tendrán además autor y editorial.

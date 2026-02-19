@@ -1,4 +1,4 @@
-package tema6.Ejercicio4;
+package tema6.POO3.Ejercicio4;
 
 public class Libros extends Ficha{
     protected String autor;
